@@ -40,9 +40,7 @@ Then install the rest with pip:
 
 ### Preprocessing
 Download your Dataset.
-* LJSpeech corpus
-*  Nick Hurricane Challenge speech data (Normal and Lombard styles)
-*  SSDRC-ed Nick data
+* VCTK Corpus
 
 Edit **hparams.py**, point **wav_path** to your dataset and run:
 
