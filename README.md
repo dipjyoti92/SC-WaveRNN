@@ -13,7 +13,7 @@ Dipjyoti Paul<sup>a</sup>, Yannis Pantazis<sup>b</sup> and Yannis Stylianou<sup>
 Recent advancements in deep learning led to human-level performance in single-speaker speech synthesis. However, there are still limitations in terms of speech quality when generalizing those systems into multiple-speaker models especially for unseen speakers and unseen recording qualities. For instance, conventional neural vocoders are adjusted to the training speaker and have poor generalization capabilities to unseen speakers. In this work, we propose a variant of WaveRNN, referred to as speaker conditional WaveRNN (SC-WaveRNN). We target towards the development of an efficient universal vocoder even for unseen speakers and recording conditions. In contrast to standard WaveRNN, SC-WaveRNN exploits additional information given in the form of speaker embeddings. Using publicly-available data for training, SC-WaveRNN achieves significantly better performance over baseline WaveRNN on both subjective and objective metrics. In MOS, SC-WaveRNN achieves an improvement of about 23% for seen speaker and seen recording condition and up to 95% for unseen speaker and unseen condition. Finally, we extend our work by implementing a multi-speaker text-to-speech (TTS) synthesis similar to zero-shot speaker adaptation. In terms of performance, our system has been preferred over the baseline TTS system by 60% over 15.5% and by 60.9% over 32.6%, for seen and unseen speakers, respectively.
 
 # Audio Samples:
-
+gen_tacotron_spk_embed
 Audio samples can be found in [here.](https://www.csd.uoc.gr/~dipjyotipaul/Universal-vocoder-IS20)
 
 
@@ -81,7 +81,7 @@ the reference speech path should be provided in --file <...> .
 
 4 - Generate Sentences with both models using:
 
-python gen_tacotron_spk_embed.py --file <...> --weights_path <...> --weights_voc <...> --output <...> --input_text <...>
+python gen_tacotron.py --file <...> --weights_path <...> --weights_voc <...> --output <...> --input_text <...>
 
 the reference speech path should be provided in --file <...> .
 
