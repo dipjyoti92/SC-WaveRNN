@@ -1,6 +1,6 @@
 from utils.dataset import get_vocoder_datasets
 from utils.dsp import *
-from models.fatchord_version_spk_embed import WaveRNN
+from models.fatchord_version import WaveRNN
 from utils.paths import Paths
 from utils.display import simple_table
 import torch
@@ -13,7 +13,7 @@ def gen_testset(model, test_set, samples, batched, target, overlap, save_path) :
 
     k = model.get_step() // 1000
 
-    for i, (m, x) in enumerate(test_set, 1):
+    for i, (m, x, s_e) in enumerate(test_set, 1):
 
         if i > samples : break
 
@@ -33,7 +33,7 @@ def gen_testset(model, test_set, samples, batched, target, overlap, save_path) :
         batch_str = f'gen_batched_target{target}_overlap{overlap}' if batched else 'gen_NOT_BATCHED'
         save_str = f'{save_path}{k}k_steps_{i}_{batch_str}.wav'
 
-        _ = model.generate(m, save_str, batched, target, overlap, hp.mu_law)
+        _ = model.generate(m, s_e, save_str, batched, target, overlap, hp.mu_law)
 
 
 def gen_from_file(model, load_path, enc_model_fpath, save_path, batched, target, overlap) :

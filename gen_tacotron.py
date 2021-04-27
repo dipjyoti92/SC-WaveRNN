@@ -1,10 +1,10 @@
 import torch
-from models.fatchord_version_spk_embed import WaveRNN
+from models.fatchord_version import WaveRNN
 import hparams as hp
 from utils.dsp import load_wav
 from utils.text.symbols import symbols
 from utils.paths import Paths
-from models.tacotron_spk_embed import Tacotron
+from models.tacotron import Tacotron
 import argparse
 from utils.text import text_to_sequence
 from utils.display import save_attention, simple_table
